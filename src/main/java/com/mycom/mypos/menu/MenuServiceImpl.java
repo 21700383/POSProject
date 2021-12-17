@@ -46,7 +46,7 @@ public class MenuServiceImpl implements MenuService{
 			MenuDAO.updateSales(item);
 			total_sales += sales;
 		}
-		System.out.println("í˜„ì¬ ë§¤ì¶œì€" + total_sales);
+		System.out.println("ÃÑ ¸ÅÃâ:" + total_sales);
 		return total_sales;
 	}
 
