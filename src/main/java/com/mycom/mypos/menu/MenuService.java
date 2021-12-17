@@ -8,4 +8,5 @@ public interface MenuService {
 	public int updateMenu(MenuVO vo);
 	public MenuVO getMenu(int seq);
 	public List<MenuVO> getMenuList();
+	public int getMenuTotal();
 }

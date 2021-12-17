@@ -35,5 +35,19 @@ public class MenuServiceImpl implements MenuService{
 	public int updateMenu(MenuVO vo) {
 		return MenuDAO.updateMenu(vo);
 	}
+	
+	@Override
+	public int getMenuTotal() {
+		List<MenuVO> menu = MenuDAO.getMenuList();
+		int sales,total_sales = 0;
+		for(MenuVO item : menu){ // for each dish in menu
+			sales = item.getCost() * item.getNumsold();
+			item.setSales(sales);
+			MenuDAO.updateSales(item);
+			total_sales += sales;
+		}
+		System.out.println("현재 매출은" + total_sales);
+		return total_sales;
+	}
 
 }

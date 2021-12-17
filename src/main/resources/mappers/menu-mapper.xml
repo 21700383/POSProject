@@ -23,4 +23,9 @@
 	<select id="getMenuList" resultType="menu">
 		select * from MENU order by id desc
 	</select>
+	<update id="updateSales">
+		update MENU
+		set sales=#{sales}
+		where id=#{id}
+	</update>
 </mapper>

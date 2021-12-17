@@ -36,4 +36,9 @@ public class MenuDAO {
 		List<MenuVO> list = sqlSession.selectList("Menu.getMenuList");
 		return list;
 	}
+	
+	public int updateSales(MenuVO vo) {
+		int result = sqlSession.update("Menu.updateSales", vo);
+		return result;
+	}
 }

@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="com.mycom.mypos.menu.MenuDAO,com.mycom.mypos.menu.MenuVO,java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="UTF-8">
 <title>free board</title>
 <style>
 #list {
@@ -65,7 +64,7 @@
 <br/>
 <div class="btn-group">
 <button type="button" onclick="location.href='add'">새글쓰기</button>
-<button type="button" onclick="location.href='count'">매출보기</button>
+<button type="button" onclick="location.href='sales'">매출보기</button>
 </div>
 </body>
 </html>

@@ -1,5 +1,7 @@
 package com.mycom.mypos.menu;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -60,5 +62,13 @@ public class MenuController {
 		else
 			System.out.println("데이터 삭제 성공!!!");
 		return "redirect:../list";
+	}
+	
+	@RequestMapping(value = "/menu/sales", method = RequestMethod.GET)
+	public String menuSales(Model model) {
+		int total_sales = menuService.getMenuTotal();
+		model.addAttribute("total_sales", total_sales);
+		model.addAttribute("list", menuService.getMenuList());
+		return "menu/sales";
 	}
 }
