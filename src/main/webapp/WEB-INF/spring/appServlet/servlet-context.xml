@@ -19,7 +19,20 @@
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/img/**" location="/resources/img" />
 
-
+	<!-- Login Interceptor to check the login state -->
+	<beans:bean id="LoginCheckInterceptor" class="com.mycom.mypos.user.LoginCheckInterceptor">
+	</beans:bean>
+	<interceptors>
+		<interceptor>
+			<mapping path="/**" />
+			<!-- Several Exceptions -->
+			<exclude-mapping path="/resources/**" />
+			<exclude-mapping path="/img/**" />
+			<exclude-mapping path="/login/*" />
+			<beans:ref bean="LoginCheckInterceptor" />
+		</interceptor>
+	</interceptors>
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
 	<beans:bean

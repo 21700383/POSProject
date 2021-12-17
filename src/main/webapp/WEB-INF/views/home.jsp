@@ -4,14 +4,10 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Home</title>
+	<title>Initial</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
 
-<P>  The time on the server is ${serverTime}. </P>
-<P> <a href="menu/list">메뉴판으로 이동</a>
+<jsp:forward page="/menu/list" />
 </body>
 </html>

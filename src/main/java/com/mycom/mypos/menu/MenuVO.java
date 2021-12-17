@@ -1,7 +1,5 @@
 package com.mycom.mypos.menu;
 
-import java.util.Date;
-
 public class MenuVO {
 	private int id;
 	private String name;

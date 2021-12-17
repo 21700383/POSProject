@@ -5,5 +5,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 	<typeAliases>
 		<typeAlias alias="menu" type="com.mycom.mypos.menu.MenuVO" />
+		<typeAlias alias="user" type="com.mycom.mypos.user.UserVO" />
 	</typeAliases>
 </configuration>
