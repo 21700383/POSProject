@@ -31,9 +31,9 @@ public class MenuController {
 	public String addPostOK(MenuVO vo){
 		int i = menuService.insertMenu(vo);
 		if (i == 0)
-			System.out.println("ë°ì´í„° ì¶”ê°€ ì‹¤íŒ¨");
+			System.out.println("µ¥ÀÌÅÍ Ãß°¡ ½ÇÆĞ");
 		else
-			System.out.println("ë°ì´í„° ì¶”ê°€ ì„±ê³µ!!!");
+			System.out.println("µ¥ÀÌÅÍ Ãß°¡ ¼º°ø");
 		return "redirect:list";
 	}
 	
@@ -48,9 +48,9 @@ public class MenuController {
 	public String editPostOK(MenuVO vo){
 		int i = menuService.updateMenu(vo);
 		if (i == 0)
-			System.out.println("ë°ì´í„° ìˆ˜ì • ì‹¤íŒ¨");
+			System.out.println("µ¥ÀÌÅÍ ¼öÁ¤ ¼º°ø");
 		else
-			System.out.println("ë°ì´í„° ìˆ˜ì • ì„±ê³µ!!!");
+			System.out.println("µ¥ÀÌÅÍ ¼öÁ¤ ½ÇÆĞ");
 		return "redirect:list";
 	}
 	
@@ -58,9 +58,9 @@ public class MenuController {
 	public String deletePost(@PathVariable("id") int id){
 		int i = menuService.deleteMenu(id);
 		if (i == 0)
-			System.out.println("ë°ì´í„° ì‚­ì œ ì‹¤íŒ¨");
+			System.out.println("µ¥ÀÌÅÍ »èÁ¦ ½ÇÆĞ");
 		else
-			System.out.println("ë°ì´í„° ì‚­ì œ ì„±ê³µ!!!");
+			System.out.println("µ¥ÀÌÅÍ »èÁ¦ ¼º°ø");
 		return "redirect:../list";
 	}
 	

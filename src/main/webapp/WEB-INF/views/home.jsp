@@ -7,7 +7,6 @@
 	<title>Initial</title>
 </head>
 <body>
-
 <jsp:forward page="/menu/list" />
 </body>
 </html>

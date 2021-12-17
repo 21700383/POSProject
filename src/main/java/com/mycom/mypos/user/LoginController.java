@@ -28,17 +28,17 @@ public class LoginController {
 		
 		UserVO loginvo = service.getUser(vo);
 		if(loginvo != null) { // login success
-			System.out.println("로그인 성공!");
+			System.out.println("success to login");
 			session.setAttribute("login", loginvo);
 			returnURL = "redirect:/menu/list";
 		}else {
-			System.out.println("로그인 실패!");
+			System.out.println("fail to login");
 			returnURL = "redirect:/login/login";
 		}
 		return returnURL;
 	}
 	
-	//로그아웃 하는 부분
+	//when logout
 	@RequestMapping(value="/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
