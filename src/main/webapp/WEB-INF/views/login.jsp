@@ -29,7 +29,7 @@ button {
 				<label>User ID: </label><input type='text' name='userid' />
 			</div>
 			<div>
-				<label>Password: </label> <input type='password' name='password' />
+				<label>Password: </label> <input type='password' name='userpw' />
 			</div>
 			<button type='submit'>login</button>
 		</form>

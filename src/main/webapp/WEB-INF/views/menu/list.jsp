@@ -63,6 +63,9 @@
 </c:forEach>
 </table>
 <br/>
+<div class="btn-group">
 <button type="button" onclick="location.href='add'">새글쓰기</button>
+<button type="button" onclick="location.href='count'">매출보기</button>
+</div>
 </body>
 </html>
