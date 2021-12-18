@@ -8,6 +8,6 @@
 <title>home</title>
 </head>
 <body>
-	<jsp:forward page="pos.jsp"/>
+	<jsp:forward page="/pos" />
 </body>
 </html>

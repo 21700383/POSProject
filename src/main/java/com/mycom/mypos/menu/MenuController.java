@@ -31,9 +31,9 @@ public class MenuController {
 	public String addPostOK(MenuVO vo){
 		int i = menuService.insertMenu(vo);
 		if (i == 0)
-			System.out.println("µ¥ÀÌÅÍ Ãß°¡ ½ÇÆÐ");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		else
-			System.out.println("µ¥ÀÌÅÍ Ãß°¡ ¼º°ø");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		return "redirect:list";
 	}
 	
@@ -48,9 +48,9 @@ public class MenuController {
 	public String editPostOK(MenuVO vo){
 		int i = menuService.updateMenu(vo);
 		if (i == 0)
-			System.out.println("µ¥ÀÌÅÍ ¼öÁ¤ ¼º°ø");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		else
-			System.out.println("µ¥ÀÌÅÍ ¼öÁ¤ ½ÇÆÐ");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		return "redirect:list";
 	}
 	
@@ -58,9 +58,9 @@ public class MenuController {
 	public String deletePost(@PathVariable("id") int id){
 		int i = menuService.deleteMenu(id);
 		if (i == 0)
-			System.out.println("µ¥ÀÌÅÍ »èÁ¦ ½ÇÆÐ");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		else
-			System.out.println("µ¥ÀÌÅÍ »èÁ¦ ¼º°ø");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		return "redirect:../list";
 	}
 	
@@ -71,4 +71,12 @@ public class MenuController {
 		model.addAttribute("list", menuService.getMenuList());
 		return "menu/sales";
 	}
+	
+	@RequestMapping(value = "/pos", method = RequestMethod.GET)
+	public String menuPos(Model model) {
+		model.addAttribute("list", menuService.getMenuList());
+		
+		return "pos";
+	}
+	
 }

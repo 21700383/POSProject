@@ -19,6 +19,7 @@
 		<tr><td>카테고리:</td><td><form:input path="category" /></td></tr>
 		<tr><td>가격:</td><td><form:input path="cost" /></td></tr>
 		<tr><td>물량:</td><td><form:input path="stock" /></td></tr>
+		<tr><td>판매량:</td><td><form:input path="numsold" /></td></tr>
 	</table>
 	<input type="submit" value="수정하기"/>
 	<input type="button" value="취소하기" onclick="history.back()"/>
