@@ -1,12 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Initial</title>
+<meta charset="UTF-8">
+<title>home</title>
+<style>
+
+</style>
 </head>
 <body>
-<jsp:forward page="/menu/list" />
+	<h1>home</h1>
+	<button type="button" onclick="location.href='menu/list'">리스트</button>
 </body>
 </html>
