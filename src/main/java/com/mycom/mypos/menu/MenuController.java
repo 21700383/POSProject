@@ -31,9 +31,9 @@ public class MenuController {
 	public String addPostOK(MenuVO vo){
 		int i = menuService.insertMenu(vo);
 		if (i == 0)
-			System.out.println("������ �߰� ����");
+			System.out.println("데이터 추가 실패");
 		else
-			System.out.println("������ �߰� ����");
+			System.out.println("데이터 추가 성공!!!");
 		return "redirect:list";
 	}
 	
@@ -48,9 +48,9 @@ public class MenuController {
 	public String editPostOK(MenuVO vo){
 		int i = menuService.updateMenu(vo);
 		if (i == 0)
-			System.out.println("������ ���� ����");
+			System.out.println("데이터 수정 실패");
 		else
-			System.out.println("������ ���� ����");
+			System.out.println("데이터 수정 성공!!!");
 		return "redirect:list";
 	}
 	
@@ -58,9 +58,9 @@ public class MenuController {
 	public String deletePost(@PathVariable("id") int id){
 		int i = menuService.deleteMenu(id);
 		if (i == 0)
-			System.out.println("������ ���� ����");
+			System.out.println("데이터 삭제 실패");
 		else
-			System.out.println("������ ���� ����");
+			System.out.println("데이터 삭제 성공!!!");
 		return "redirect:../list";
 	}
 	
@@ -79,4 +79,16 @@ public class MenuController {
 		return "pos";
 	}
 	
+	@RequestMapping(value = "/updatebyone/{id}", method = RequestMethod.GET)
+	public String updateByOne(@PathVariable("id") int id, Model model){
+		model.addAttribute("list", menuService.getMenuList());
+		
+		MenuVO menuVO = menuService.getMenu(id);
+		int i = menuService.updateByOne(id);
+		if (i == 0)
+			System.out.println("Get order failed!");
+		else
+			System.out.println("Get order success!");
+		return "redirect:../pos";
+	}
 }
