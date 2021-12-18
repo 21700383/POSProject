@@ -11,7 +11,7 @@
 	<update id="updateMenu">
 		update MENU
 		set name=#{name}, category=#{category}, cost=#{cost},
-		stock=#{stock}
+		stock=#{stock}, numsold=#{numsold}
 		where id=#{id}
 	</update>
 	<delete id="deleteMenu">
@@ -26,6 +26,11 @@
 	<update id="updateSales">
 		update MENU
 		set sales=#{sales}
+		where id=#{id}
+	</update>
+	<update id="updateByOne">
+		update MENU
+		set stock=#{stock}, numsold=#{numsold}
 		where id=#{id}
 	</update>
 </mapper>

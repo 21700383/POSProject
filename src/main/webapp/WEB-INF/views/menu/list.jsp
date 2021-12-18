@@ -36,7 +36,7 @@
 </head>
 <body>
 <h1>메뉴 목록</h1>
-
+<p>메뉴 목록을 확인할 수 있는 화면입니다</p> <button type="button" onclick="location.href='../login/logout'">로그아웃</button>
 <table id="list" width="90%">
 <tr>
 	<th>ID</th>

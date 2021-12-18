@@ -41,4 +41,9 @@ public class MenuDAO {
 		int result = sqlSession.update("Menu.updateSales", vo);
 		return result;
 	}
+	
+	public int updateByOne(MenuVO vo) {
+		int result = sqlSession.update("Menu.updateByOne", vo);
+		return result;
+	}
 }

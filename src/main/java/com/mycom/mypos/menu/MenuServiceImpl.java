@@ -17,8 +17,8 @@ public class MenuServiceImpl implements MenuService{
 	}
 
 	@Override
-	public MenuVO getMenu(int seq) {
-		return MenuDAO.getMenu(seq);
+	public MenuVO getMenu(int id) {
+		return MenuDAO.getMenu(id);
 	}
 	
 	@Override
@@ -46,8 +46,18 @@ public class MenuServiceImpl implements MenuService{
 			MenuDAO.updateSales(item);
 			total_sales += sales;
 		}
-		System.out.println("√— ∏≈√‚:" + total_sales);
 		return total_sales;
 	}
 
+	@Override
+	public int updateByOne(int id) {
+		MenuVO vo = MenuDAO.getMenu(id);
+		int stock, numsold;
+		stock = vo.getStock() - 1; // minus 1 on items remaining
+		numsold = vo.getNumsold() + 1; // plus 1 on items sold
+		vo.setStock(stock);
+		vo.setNumsold(numsold);
+		return MenuDAO.updateByOne(vo);
+	}
+	
 }

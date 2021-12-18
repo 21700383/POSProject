@@ -36,6 +36,7 @@
 			<th>카테고리</th>
 			<th>가격</th>
 			<th>남은재고</th>
+			<th>주문</th>
 		</tr>
 		<c:forEach items="${list}" var="u">
 			<tr>
@@ -43,6 +44,7 @@
 				<td>${u.category}</td>
 				<td>${u.cost}</td>
 				<td>${u.stock}</td>
+				<td><a href="updatebyone/${u.id}">주문</a></td>
 			</tr>
 		</c:forEach>
 	</table>

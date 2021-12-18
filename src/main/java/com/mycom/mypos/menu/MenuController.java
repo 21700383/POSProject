@@ -79,4 +79,16 @@ public class MenuController {
 		return "pos";
 	}
 	
+	@RequestMapping(value = "/updatebyone/{id}", method = RequestMethod.GET)
+	public String updateByOne(@PathVariable("id") int id, Model model){
+		model.addAttribute("list", menuService.getMenuList());
+		
+		MenuVO menuVO = menuService.getMenu(id);
+		int i = menuService.updateByOne(id);
+		if (i == 0)
+			System.out.println("Get order success!");
+		else
+			System.out.println("Get order failed!");
+		return "redirect:../pos";
+	}
 }
