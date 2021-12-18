@@ -5,32 +5,47 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <title>pos</title>
+
 <style>
-#list {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-#list td, #list th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align:center;
-}
-#list tr:nth-child(even){background-color: #f2f2f2;}
-#list tr:hover {background-color: #ddd;}
-#list th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: #006bb3;
-  color: white;
-}
+	body {
+		width: 60%;
+		margin-left: 20%;
+		margin-top: 100px;
+	}
+	
+	h1 {
+		font-size: 50px;
+		text-align: center;
+		margin-bottom: 40px;
+	}
+	
+	table {
+		text-align: center;
+	}
+	
+	.btn-group {
+		float: right;
+		margin-right: 20px;
+	}
+	button{
+		float:right;
+		width: 100px;
+	}
 </style>
+
 </head>
 <body>
-	<h1>pos</h1>
-	<table id="list" width="90%">
+	<h1>Menu</h1>
+	<table class="table" id="list" width="90%">
+		<thead class="thead thead-light">
 		<tr>
 			<th>이름</th>
 			<th>카테고리</th>
@@ -38,6 +53,8 @@
 			<th>남은재고</th>
 			<th>주문</th>
 		</tr>
+		</thead>
+		<tbody>
 		<c:forEach items="${list}" var="u">
 			<tr>
 				<td>${u.name}</td>
@@ -47,7 +64,8 @@
 				<td><a href="updatebyone/${u.id}">주문</a></td>
 			</tr>
 		</c:forEach>
+		</tbody>
 	</table>
-	<button type="button" onclick="location.href='menu/list'">리스트</button>
+	<button class="btn btn-info" type="button" onclick="location.href='menu/list'">관리</button>
 </body>
 </html>
