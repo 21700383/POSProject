@@ -86,9 +86,9 @@ public class MenuController {
 		MenuVO menuVO = menuService.getMenu(id);
 		int i = menuService.updateByOne(id);
 		if (i == 0)
-			System.out.println("Get order success!");
-		else
 			System.out.println("Get order failed!");
+		else
+			System.out.println("Get order success!");
 		return "redirect:../pos";
 	}
 }
