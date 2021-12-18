@@ -5,47 +5,54 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <title>일매출</title>
+
 <style>
-#list {
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
-}
+	h1{
+		margin-bottom: 50px;
+	}
+	body{
+		width: 50%;
+		margin-left: 25%;
+		margin-top: 50px;
+		text-align: center;
+	}
+	.table{
+		margin-bottom: 30px;
+	}
 
-#list td, #list th {
-	border: 1px solid #ddd;
-	padding: 8px;
-	text-align: center;
-}
-
-#list tr:nth-child(even) {
-	background-color: #f2f2f2;
-}
-
-#list tr:hover {
-	background-color: #ddd;
-}
-
-#list th {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-align: center;
-	background-color: #006bb3;
-	color: white;
-}
+	mark{
+		width: 200px;
+		font-size: 30px;
+		font-weight: bold;
+		background-color: lightgray;
+	}
+	button{
+		margin-top: 50px;
+	}
 </style>
+
 </head>
 <body>
 	<h1>하루 매출</h1>
 
-	<table id="list" width="90%">
+	<table class="table" id="list" width="90%">
+		<thead class="thead thead-dark">
 		<tr>
 			<th>이름</th>
 			<th>가격</th>
 			<th>판매량</th>
 			<th>매출</th>
 		</tr>
+		</thead>
+		<tbody>
 		<c:forEach items="${list}" var="u">
 			<tr>
 				<td>${u.name}</td>
@@ -54,11 +61,10 @@
 				<td>${u.sales}</td>
 			</tr>
 		</c:forEach>
+		</tbody>
 	</table>
-	<br />
-	<p>
-		<b>총 매출: </b><c:out value='${total_sales}' />
-	</p>
-	<button type="button" onclick="history.back()">돌아가기</button>
+	<br/>
+	<mark>총 매출: <c:out value='${total_sales}' /></mark><br>
+	<button class="btn btn-info" type="button" onclick="history.back()">돌아가기</button>
 </body>
 </html>
